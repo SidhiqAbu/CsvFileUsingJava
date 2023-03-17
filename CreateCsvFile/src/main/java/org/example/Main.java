@@ -8,7 +8,7 @@ public class Main {
         System.out.println("Enter the Items Count:");
         int n=scan.nextInt();
         scan.nextLine();
-        System.out.println("Enter your csv file name: ");
+        System.out.println("Enter your csv file location with file name: ");
         String fileName= scan.nextLine();
         StringBuilder strBdr= new StringBuilder();
         strBdr.append("Product Name").append(",").append("Product Price").append(",").append("Item Number/SKU/Product Code").append(",").append("Model Number").append(",").append("Product Category").append(",").append("Product Description").append("\n");
@@ -26,7 +26,7 @@ public class Main {
             System.out.println("Enter Product Description: ");
             String description= scan.nextLine();
             strBdr.append(Name).append(",").append(Price).append(",").append(code).append(",").append(model).append(",").append(category).append(",").append(description).append("\n");
-            try(FileWriter flWtr=new FileWriter("C:\\Users\\70936\\Downloads\\SidhiqAbu\\CSVfile\\"+fileName)){
+            try(FileWriter flWtr=new FileWriter(fileName)){
                 flWtr.write(strBdr.toString());
             }catch (Exception ex){
                 ex.printStackTrace();
